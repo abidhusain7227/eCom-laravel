@@ -22,7 +22,6 @@
     .custome-login{
         height:450px;
         padding-top: 100px;
-        background-color: cadetblue;
     }
 </style>
 </html>
