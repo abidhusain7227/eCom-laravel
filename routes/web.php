@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +20,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', function () {
     return view('login');
 });
+// logout
+Route::get('logout', function () {
+    Auth::logout();
+    return redirect("login");
+});
 
 Route::post("/login",[UserController::class,'login']);
 Route::get("/",[ProductController::class,'index']);
+Route::get("detail{id}",[ProductController::class,'detail']);
+Route::get("search",[ProductController::class,'search']);
+Route::post("add_to_cart",[ProductController::class,'AddToCart']);
+Route::get("cartlist",[ProductController::class,'cartList']);
+Route::get("removecart{id}",[ProductController::class,'removeCart']);
+Route::get("odernow",[ProductController::class,'oderNow']);
+Route::post("orderplace",[ProductController::class,'orderPlace']);
+Route::get("myorder",[ProductController::class,'myOrder']);

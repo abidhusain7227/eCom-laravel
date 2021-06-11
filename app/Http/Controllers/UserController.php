@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -13,7 +14,8 @@ class UserController extends Controller
         if(!$user || !Hash::check($req->password,$user->password)){
             return "Username or Passowrd is not matched";
         }else{
-            $req->session()->put('user',$user);
+            Auth::login($user);
+            // $req->session()->put('user',$user);
             return redirect('/');
         }
     }

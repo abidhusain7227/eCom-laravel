@@ -11,9 +11,9 @@
     <title>E-comm Project</title>
 </head>
 <body>
-    {{ View::make('header')}}
+    @include('header')
     @yield('content')
-    {{ View::make('footer')}}
+    @include('footer')
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -22,6 +22,37 @@
     .custome-login{
         height:450px;
         padding-top: 100px;
+    }
+    .slider-img{
+        height: 400px !important;
+    }
+    .custome-product{
+        height:450px;
+        padding-bottom: 50px;
+    }
+    .text{
+        color: navy;
+    }
+    .inner-img{
+        height: 150px;
+    }
+    .trending-item{
+        float: left;
+        width: 30%;
+    }
+    .trending-wrapper{
+        margin: 30px;
+    }
+    .detail-img{
+        height: 200px;
+    }
+    .search-box{
+        width: 500px !important;
+    }
+    .cart-list-devider{
+        border-bottom: 1px solid #40c1d6;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
     }
 </style>
 </html>
